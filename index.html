@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PulseDNA — Investor Data Room</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  /* Landing page specific */
+  .why-now-banner {
+    background: linear-gradient(135deg, rgba(0,210,180,0.08), rgba(167,139,250,0.08));
+    border: 1px solid rgba(0,210,180,0.2);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .why-now-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), var(--purple));
+  }
+  .why-now-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--teal);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .why-now-title {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .why-now-body {
+    font-size: 14px;
+    color: #c8d8e8;
+    line-height: 1.8;
+    max-width: 800px;
+  }
+  .why-now-body p { margin-bottom: 14px; }
+  .why-now-body strong { color: var(--white); }
+  .why-now-body .highlight { color: var(--teal); font-weight: 600; }
+  .why-now-body .highlight-p { color: var(--purple); font-weight: 600; }
+
+  .nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .nav-section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .nav-section:hover { border-color: rgba(0,210,180,0.3); transform: translateY(-2px); }
+  .nav-section.locked:hover { border-color: rgba(245,158,11,0.3); }
+
+  .nav-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .nav-section-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-section-title .icon { font-size: 18px; }
+
+  .nav-doc-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13px;
+    transition: background 0.15s, color 0.15s;
+    margin-bottom: 2px;
+  }
+  .nav-doc-item:hover { background: var(--card2); color: var(--teal); }
+  .nav-doc-item .di { font-size: 14px; }
+
+  .confidential-banner {
+    background: rgba(248,113,113,0.06);
+    border: 1px solid rgba(248,113,113,0.2);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: var(--red);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .traction-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .traction-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+
+  .traction-logo {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+
+  .traction-desc {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <div class="brand">PulseDNA</div>
+    <div class="tagline">Investor Data Room · Confidential</div>
+  </div>
+
+  <div class="sidebar-section">Overview</div>
+  <a href="index.html" class="sidebar-item active"><span class="icon">🏠</span> Data Room Home</a>
+
+  <div class="sidebar-section">Company</div>
+  <a href="why-now.html" class="sidebar-item"><span class="icon">⚡</span> Why Now</a>
+  <a href="team.html" class="sidebar-item"><span class="icon">👥</span> Team Profiles</a>
+  <a href="legal.html" class="sidebar-item"><span class="icon">📋</span> Legal Docs</a>
+
+  <div class="sidebar-section">Products</div>
+  <a href="product.html" class="sidebar-item locked"><span class="icon">🔒</span> Product Build <span class="lock-badge">NDA</span></a>
+  <a href="gtm.html" class="sidebar-item"><span class="icon">🚀</span> GTM Strategy</a>
+  <a href="pricing.html" class="sidebar-item"><span class="icon">💰</span> Pricing</a>
+
+  <div class="sidebar-section">Verticals</div>
+  <a href="nuclear.html" class="sidebar-item"><span class="icon">⚛️</span> Nuclear & Energy</a>
+
+  <div class="sidebar-section">Financials</div>
+  <a href="financials.html" class="sidebar-item"><span class="icon">📊</span> Financial Statements</a>
+
+  <div class="sidebar-section">Pitch Decks</div>
+  <a href="decks.html" class="sidebar-item"><span class="icon">📽️</span> Pitch Decks</a>
+
+  <div class="sidebar-footer">
+    <div>PulseDNA Inc. · Delaware C-Corp</div>
+    <div style="margin-top:4px;">CAGE: 0YRQ3 · UEI: JXQZCN42MF29</div>
+    <div style="margin-top:4px;color:var(--teal);">pulsednafederatedai.com</div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="accent-line"></div>
+  <div class="topbar">
+    <div class="topbar-breadcrumb">
+      <span>PulseDNA Data Room</span>
+    </div>
+    <div class="topbar-badge">CONFIDENTIAL · NDA REQUIRED</div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- CONFIDENTIAL NOTICE -->
+    <div class="confidential-banner">
+      <span>🔐</span>
+      <span>This data room contains confidential and proprietary information of The PulseDNA Inc. By accessing this material, you agree to maintain strict confidentiality. The Product Build section requires a separate NDA and access password.</span>
+    </div>
+
+    <!-- WHY NOW HERO -->
+    <div class="why-now-banner">
+      <div class="why-now-label">⚡ Why Now — The Inflection Point</div>
+      <div class="why-now-title">The Universe Has Been <span style="color:var(--teal);">Steering Us Here</span></div>
+      <div class="why-now-body">
+        <p>AI answers are <strong>replacing search</strong> — but the infrastructure to verify those answers doesn't exist yet. Every major AI system today — GPT-4, Gemini, Claude, LLaMA — generates confident answers with <strong>zero verifiable provenance</strong>. In nuclear, finance, and national security, that isn't an inconvenience. It's an existential liability.</p>
+        <p>The EU AI Act, the NRC's evolving digital I&amp;C guidance, and the SEC's model risk frameworks are no longer asking for AI transparency — <strong>they are mandating it</strong>. The window to establish the standard for AI provenance is open right now, and closing fast.</p>
+        <p>When we landed in <span class="highlight">DOE R&amp;D</span>, we didn't plan it. We were gifted a dream team — experts in NLP, physics, and nuclear sensor data, with Masters and PhDs in Nuclear Engineering and AI. One DOE SBIR in FLaaS for nuclear non-proliferation. One in AI-driven smart grid engineering. The universe kept handing us the exact people and proof points this problem demands.</p>
+        <p>The result: <span class="highlight">Magic Lens</span> — a federated, sovereign AI compliance layer that gives nuclear operators, government agencies, and regulated enterprises the ability to deploy hyperscaler-grade AI <strong>without their data ever leaving their boundary</strong>. And <span class="highlight-p">PulseFINE™</span> — the full air-gapped infrastructure build for operators who need complete sovereign control.</p>
+        <p><strong>The internet solved identity with SSL in 1994. We are building the equivalent for AI credibility in 2026.</strong></p>
+      </div>
+    </div>
+
+    <!-- TRACTION STRIP -->
+    <div class="traction-strip">
+      <div class="traction-item">
+        <div class="traction-logo">GOOGLE</div>
+        <div class="traction-desc">AI Futures Fund — Recognized</div>
+      </div>
+      <div class="traction-item">
+        <div class="traction-logo">NVIDIA</div>
+        <div class="traction-desc">Partnership — Active</div>
+      </div>
+      <div class="traction-item">
+        <div class="traction-logo">SUPERMICRO</div>
+        <div class="traction-desc">Hardware Co-Sell Motion</div>
+      </div>
+      <div class="traction-item">
+        <div class="traction-logo">HADRON</div>
+        <div class="traction-desc">Product Demo Completed</div>
+      </div>
+      <div class="traction-item">
+        <div class="traction-logo">SAM.GOV</div>
+        <div class="traction-desc">Registered · SBA Certified</div>
+      </div>
+    </div>
+
+    <!-- NAVIGATION GRID -->
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;margin-bottom:16px;">Data Room Sections</div>
+
+    <div class="nav-grid">
+
+      <!-- Company -->
+      <div class="nav-section">
+        <div class="nav-section-header">
+          <div class="nav-section-title"><span class="icon">🏢</span> Company</div>
+        </div>
+        <a href="why-now.html" class="nav-doc-item"><span class="di">⚡</span> Why Now — Full Brief</a>
+        <a href="team.html" class="nav-doc-item"><span class="di">👥</span> Team Profiles</a>
+        <a href="legal.html" class="nav-doc-item"><span class="di">📋</span> Certificate of Incorporation</a>
+        <a href="legal.html" class="nav-doc-item"><span class="di">🏛️</span> Delaware C-Corp · CAGE · UEI</a>
+      </div>
+
+      <!-- Product Build (LOCKED) -->
+      <div class="nav-section locked">
+        <div class="nav-section-header">
+          <div class="nav-section-title"><span class="icon">🔒</span> Product Build</div>
+          <span class="pill gold">NDA Required</span>
+        </div>
+        <a href="product.html" class="nav-doc-item"><span class="di">🏗️</span> Technical Architecture</a>
+        <a href="product.html" class="nav-doc-item"><span class="di">🧠</span> Magic Lens — 4 Lenses</a>
+        <a href="product.html" class="nav-doc-item"><span class="di">⚙️</span> 3-Phase Build Roadmap</a>
+        <a href="product.html" class="nav-doc-item"><span class="di">🔐</span> FedRAMP &amp; Security Design</a>
+        <a href="product.html" class="nav-doc-item"><span class="di">📄</span> Technical Investor Brief</a>
+      </div>
+
+      <!-- GTM & Pricing -->
+      <div class="nav-section">
+        <div class="nav-section-header">
+          <div class="nav-section-title"><span class="icon">🚀</span> GTM &amp; Pricing</div>
+        </div>
+        <a href="gtm.html" class="nav-doc-item"><span class="di">🗺️</span> GTM Strategy 2.0</a>
+        <a href="gtm.html" class="nav-doc-item"><span class="di">🎯</span> Magic Lens — pulsednafederatedai.com/magiclens</a>
+        <a href="pricing.html" class="nav-doc-item"><span class="di">💰</span> Pricing Tiers &amp; Revenue Model</a>
+        <a href="pricing.html" class="nav-doc-item"><span class="di">📈</span> Path to $10M ARR</a>
+      </div>
+
+      <!-- Nuclear & Energy -->
+      <div class="nav-section">
+        <div class="nav-section-header">
+          <div class="nav-section-title"><span class="icon">⚛️</span> Nuclear &amp; Energy</div>
+        </div>
+        <a href="nuclear.html" class="nav-doc-item"><span class="di">🏭</span> Hadron Energy Partnership</a>
+        <a href="nuclear.html" class="nav-doc-item"><span class="di">📡</span> Supermicro Co-Sell Architecture</a>
+        <a href="nuclear.html" class="nav-doc-item"><span class="di">🔬</span> Phase 1 vs Phase 2 Deployment</a>
+        <a href="nuclear.html" class="nav-doc-item"><span class="di">🌐</span> pulsednafederatedai.com/nuclear</a>
+      </div>
+
+      <!-- Financials -->
+      <div class="nav-section">
+        <div class="nav-section-header">
+          <div class="nav-section-title"><span class="icon">📊</span> Financial Statements</div>
+        </div>
+        <a href="financials.html" class="nav-doc-item"><span class="di">🧾</span> Invoice #1001 — SAIC/USPTO Oct 2025</a>
+        <a href="financials.html" class="nav-doc-item"><span class="di">🧾</span> Invoice #1003 — SAIC/USPTO Dec 2025</a>
+        <a href="financials.html" class="nav-doc-item"><span class="di">🧾</span> Invoice #1004 — SAIC/USPTO Jan 2026</a>
+        <a href="financials.html" class="nav-doc-item"><span class="di">🧾</span> Invoice #1005 — SAIC/USPTO Feb 2026</a>
+      </div>
+
+      <!-- Pitch Decks -->
+      <div class="nav-section">
+        <div class="nav-section-header">
+          <div class="nav-section-title"><span class="icon">📽️</span> Pitch Decks</div>
+        </div>
+        <a href="decks.html" class="nav-doc-item"><span class="di">🔮</span> AI Trust Infrastructure Deck (13 slides)</a>
+        <a href="decks.html" class="nav-doc-item"><span class="di">⚛️</span> Nuclear Mini Deck (6 slides)</a>
+        <a href="decks.html" class="nav-doc-item"><span class="di">✨</span> Magic Lens Angel Pitch Deck</a>
+        <a href="decks.html" class="nav-doc-item"><span class="di">💵</span> The Ask — $10M Seed Round</a>
+      </div>
+
+    </div>
+
+    <!-- RAISE SUMMARY -->
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-value">$10M</div>
+        <div class="stat-label">Seed Raise Target</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value purple">15%</div>
+        <div class="stat-label">Equity Offered</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value gold">$66M</div>
+        <div class="stat-label">Post-Money Valuation</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value green">$10M</div>
+        <div class="stat-label">ARR Target (10–15 Accounts)</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product Build — PulseDNA Data Room</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  /* Password gate overlay */
+  #gate {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,14,23,0.97);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+  }
+  .gate-box {
+    background: var(--card);
+    border: 1px solid rgba(0,210,180,0.3);
+    border-radius: 20px;
+    padding: 48px;
+    max-width: 440px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(0,210,180,0.1);
+  }
+  .gate-icon { font-size: 48px; margin-bottom: 16px; }
+  .gate-title { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
+  .gate-subtitle { font-size: 14px; color: var(--muted); margin-bottom: 32px; line-height: 1.6; }
+  .gate-input {
+    width: 100%;
+    background: var(--card2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 15px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .gate-input:focus { border-color: var(--teal); }
+  .gate-btn {
+    width: 100%;
+    background: var(--teal);
+    color: #0a0e17;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: opacity 0.2s;
+  }
+  .gate-btn:hover { opacity: 0.85; }
+  .gate-error {
+    color: var(--red);
+    font-size: 13px;
+    margin-top: 12px;
+    display: none;
+  }
+  .gate-nda {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+
+  /* Content (hidden until unlocked) */
+  #content { display: none; }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .phase-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(0,210,180,0.15);
+    border: 2px solid var(--teal);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 900; color: var(--teal);
+    flex-shrink: 0;
+  }
+  .phase-num.purple { background: rgba(167,139,250,0.15); border-color: var(--purple); color: var(--purple); }
+  .phase-num.gold { background: rgba(245,158,11,0.15); border-color: var(--gold); color: var(--gold); }
+  .phase-name { font-size: 17px; font-weight: 800; }
+  .phase-cost { font-size: 13px; color: var(--teal); font-weight: 700; }
+  .phase-cost.purple { color: var(--purple); }
+  .phase-cost.gold { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- PASSWORD GATE -->
+<div id="gate">
+  <div class="gate-box">
+    <div class="gate-icon">🔒</div>
+    <div class="gate-title">NDA Required</div>
+    <div class="gate-subtitle">This section contains proprietary technical architecture, build plans, and IP details. Access is restricted to investors who have signed a Non-Disclosure Agreement with PulseDNA Inc.</div>
+    <input type="password" class="gate-input" id="pwInput" placeholder="Enter access password" />
+    <button class="gate-btn" onclick="checkPassword()">Unlock Product Build →</button>
+    <div class="gate-error" id="gateError">Incorrect password. Please contact stephanie@thepulsedna.com</div>
+    <div class="gate-nda">By entering this password, you confirm you have executed an NDA with The PulseDNA Inc. and agree to maintain strict confidentiality of all materials contained herein.</div>
+  </div>
+</div>
+
+<script>
+function checkPassword() {
+  const pw = document.getElementById('pwInput').value;
+  if (pw === 'federatedlearning888!') {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+  } else {
+    document.getElementById('gateError').style.display = 'block';
+  }
+}
+document.getElementById('pwInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') checkPassword();
+});
+</script>
+
+<nav class="sidebar">
+  <div class="sidebar-logo"><div class="brand">PulseDNA</div><div class="tagline">Investor Data Room · Confidential</div></div>
+  <div class="sidebar-section">Overview</div>
+  <a href="index.html" class="sidebar-item"><span class="icon">🏠</span> Data Room Home</a>
+  <div class="sidebar-section">Company</div>
+  <a href="why-now.html" class="sidebar-item"><span class="icon">⚡</span> Why Now</a>
+  <a href="team.html" class="sidebar-item"><span class="icon">👥</span> Team Profiles</a>
+  <a href="legal.html" class="sidebar-item"><span class="icon">📋</span> Legal Docs</a>
+  <div class="sidebar-section">Products</div>
+  <a href="product.html" class="sidebar-item locked active"><span class="icon">🔒</span> Product Build <span class="lock-badge">NDA</span></a>
+  <a href="gtm.html" class="sidebar-item"><span class="icon">🚀</span> GTM Strategy</a>
+  <a href="pricing.html" class="sidebar-item"><span class="icon">💰</span> Pricing</a>
+  <div class="sidebar-section">Verticals</div>
+  <a href="nuclear.html" class="sidebar-item"><span class="icon">⚛️</span> Nuclear & Energy</a>
+  <div class="sidebar-section">Financials</div>
+  <a href="financials.html" class="sidebar-item"><span class="icon">📊</span> Financial Statements</a>
+  <div class="sidebar-section">Pitch Decks</div>
+  <a href="decks.html" class="sidebar-item"><span class="icon">📽️</span> Pitch Decks</a>
+  <div class="sidebar-footer"><div>PulseDNA Inc. · Delaware C-Corp</div><div style="margin-top:4px;color:var(--teal);">pulsednafederatedai.com</div></div>
+</nav>
+
+<div class="main">
+  <div class="accent-line"></div>
+  <div class="topbar">
+    <div class="topbar-breadcrumb"><a href="index.html">Data Room</a> <span>›</span> <span>Product Build</span></div>
+    <div class="topbar-badge" style="background:rgba(248,113,113,0.15);border-color:rgba(248,113,113,0.3);color:var(--red);">🔒 NDA REQUIRED</div>
+  </div>
+
+  <div id="content" class="page-content">
+    <a href="index.html" class="back-link">← Back to Data Room</a>
+    <div class="page-hero">
+      <div class="page-eyebrow">🔒 Product Build — Technical Investor Brief</div>
+      <h1 class="page-title">Magic Lens <span class="t">Architecture</span> &amp; <span class="p">Build Plan</span></h1>
+      <p class="page-subtitle">Proprietary technical architecture, 3-phase build roadmap, investment breakdown, and IP details. Confidential — NDA required.</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-value">Phase 1</div>
+        <div class="stat-label">$300K–$450K · MVP</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value purple">Phase 2</div>
+        <div class="stat-label">$350K–$530K · Production</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value gold">Phase 3</div>
+        <div class="stat-label">$250K–$400K · Scale</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value green">$900K</div>
+        <div class="stat-label">Total Minimum Build</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🏗️ What Magic Lens Actually Is</div>
+      <div class="card-body">
+        <p style="margin-bottom:12px;">Magic Lens is a <strong style="color:var(--teal);">Federated AI Knowledge Intelligence Platform</strong> — a hybrid cloud/on-premise system that enables organizations to query, reason over, and extract verified insights from large, distributed, and heterogeneous document corpora without centralizing sensitive data.</p>
+        <p style="margin-bottom:12px;">The core architecture combines four intelligence lenses:</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px;">
+          <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:6px;">🔍 HISTORY &amp; EVIDENCE LENS</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">Temporal reasoning over regulatory history. Surfaces precedent, prior art, and historical compliance decisions with citation chains.</div>
+          </div>
+          <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-size:12px;font-weight:700;color:var(--purple);margin-bottom:6px;">💬 DISCOURSE &amp; EXPERT LENS</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">Identifies expert consensus, dissenting opinions, and knowledge gaps across technical literature and regulatory submissions.</div>
+          </div>
+          <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;">🕸️ KNOWLEDGE GRAPH LENS</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">Neo4j-powered relationship mapping between regulations, components, incidents, and personnel. Visualizes compliance dependency chains.</div>
+          </div>
+          <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+            <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:6px;">⚠️ ANOMALY DETECTION LENS</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">Real-time streaming anomaly detection via Kafka pipeline. Identifies deviations from regulatory baselines and operational norms.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;margin-bottom:20px;">3-Phase Build Roadmap</div>
+
+    <div class="card">
+      <div class="phase-header">
+        <div class="phase-num">1</div>
+        <div>
+          <div class="phase-name">Phase 1 — MVP &amp; Pilot Validation</div>
+          <div class="phase-cost">$300,000 – $450,000 · Months 1–6</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="data-table" style="margin-top:0;">
+          <thead><tr><th>Component</th><th>Technology</th><th>Cost Range</th></tr></thead>
+          <tbody>
+            <tr><td>Core Infrastructure</td><td style="color:var(--muted);">AWS GovCloud / Azure Gov · Kubernetes · Terraform</td><td style="color:var(--teal);">$50K–$80K</td></tr>
+            <tr><td>AI/ML Pipeline</td><td style="color:var(--muted);">NVIDIA FLARE · LangChain · Hugging Face · Weaviate</td><td style="color:var(--teal);">$80K–$120K</td></tr>
+            <tr><td>Knowledge Graph</td><td style="color:var(--muted);">Neo4j Enterprise · GraphQL API</td><td style="color:var(--teal);">$40K–$60K</td></tr>
+            <tr><td>Compliance Layer</td><td style="color:var(--muted);">10 CFR 50 Appendix B · NUREG-0800 mapping</td><td style="color:var(--teal);">$60K–$90K</td></tr>
+            <tr><td>Security &amp; Auth</td><td style="color:var(--muted);">Zero-trust · FedRAMP-aligned · RBAC</td><td style="color:var(--teal);">$40K–$60K</td></tr>
+            <tr><td>Team (6 months)</td><td style="color:var(--muted);">2 ML engineers · 1 DevOps · 1 compliance specialist</td><td style="color:var(--teal);">$30K–$40K/mo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="phase-header">
+        <div class="phase-num purple">2</div>
+        <div>
+          <div class="phase-name">Phase 2 — Production Hardening &amp; Enterprise</div>
+          <div class="phase-cost purple">$350,000 – $530,000 · Months 7–12</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="data-table" style="margin-top:0;">
+          <thead><tr><th>Component</th><th>Technology</th><th>Cost Range</th></tr></thead>
+          <tbody>
+            <tr><td>FedRAMP Ready Certification</td><td style="color:var(--muted);">3PAO assessment · SSP documentation · POA&amp;M</td><td style="color:var(--purple);">$80K–$120K</td></tr>
+            <tr><td>On-Premise Deployment</td><td style="color:var(--muted);">Supermicro nodes · Air-gap configuration · HSM</td><td style="color:var(--purple);">$100K–$150K</td></tr>
+            <tr><td>Streaming Pipeline</td><td style="color:var(--muted);">Apache Kafka · Flink · real-time anomaly detection</td><td style="color:var(--purple);">$50K–$80K</td></tr>
+            <tr><td>Unstructured Data NLP</td><td style="color:var(--muted);">John Snow Labs · SparkNLP · handwritten note OCR</td><td style="color:var(--purple);">$40K–$60K</td></tr>
+            <tr><td>Enterprise Integrations</td><td style="color:var(--muted);">LDAP/AD · SSO/SAML · audit export APIs</td><td style="color:var(--purple);">$30K–$50K</td></tr>
+            <tr><td>Team Expansion</td><td style="color:var(--muted);">CV team · SRE · Ex-Flower AI offshore engineers</td><td style="color:var(--purple);">$50K–$70K/mo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="phase-header">
+        <div class="phase-num gold">3</div>
+        <div>
+          <div class="phase-name">Phase 3 — Scale &amp; Sovereign Infrastructure</div>
+          <div class="phase-cost gold">$250,000 – $400,000 · Months 13–18</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="data-table" style="margin-top:0;">
+          <thead><tr><th>Component</th><th>Technology</th><th>Cost Range</th></tr></thead>
+          <tbody>
+            <tr><td>Multi-Site Federation</td><td style="color:var(--muted);">NVIDIA FLARE multi-node · cross-facility learning</td><td style="color:var(--gold);">$60K–$90K</td></tr>
+            <tr><td>Nuclear Specialists</td><td style="color:var(--muted);">1 sentiment analyst (NLP) · 1 nuclear physics SME</td><td style="color:var(--gold);">$80K–$120K/yr each</td></tr>
+            <tr><td>Colocation Centers (5)</td><td style="color:var(--muted);">Hardware procurement · network · power · cooling</td><td style="color:var(--gold);">$4M (seed allocation)</td></tr>
+            <tr><td>Innovation Pods</td><td style="color:var(--muted);">Per-vertical compliance sandbox environments</td><td style="color:var(--gold);">$50K–$80K/pod</td></tr>
+            <tr><td>PulseFINE™ GA Release</td><td style="color:var(--muted);">Full air-gapped sovereign AI platform</td><td style="color:var(--gold);">$60K–$110K</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="card">
+      <div class="card-title">🛡️ Technical Moat Summary</div>
+      <div class="card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:8px;">TECHNOLOGY STACK</div>
+            <div style="font-size:12px;color:var(--muted);line-height:2;">NVIDIA FLARE (federated learning)<br/>Neo4j (knowledge graph)<br/>Apache Kafka (streaming)<br/>LangChain + Weaviate (RAG)<br/>John Snow Labs (NLP/SparkNLP)<br/>Supermicro (sovereign hardware)</div>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:700;color:var(--purple);margin-bottom:8px;">DEFENSIBILITY FACTORS</div>
+            <div style="font-size:12px;color:var(--muted);line-height:2;">DOE SBIR R&D provenance<br/>Top Secret clearance (CTO)<br/>10 CFR 50 compliance-native<br/>FedRAMP certification path<br/>Network effects (trust graph grows)<br/>Switching costs (audit trail lock-in)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      "The smallest working loop: source → verification → trust score → API response. That's the thin slice demo. Everything else is scale."
+      <div class="quote-attr">— Eugene Jin, CTO, PulseDNA</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

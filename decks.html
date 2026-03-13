@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pitch Decks — PulseDNA Data Room</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  .deck-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    transition: border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .deck-card:hover { border-color: rgba(0,210,180,0.3); transform: translateY(-2px); }
+  .deck-card.purple:hover { border-color: rgba(167,139,250,0.3); }
+  .deck-icon { font-size: 32px; text-align: center; }
+  .deck-title { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+  .deck-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .deck-slides { font-size: 12px; color: var(--teal); font-weight: 700; margin-top: 6px; }
+  .deck-slides.purple { color: var(--purple); }
+  .deck-arrow { font-size: 20px; color: var(--teal); }
+  .deck-arrow.purple { color: var(--purple); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><div class="brand">PulseDNA</div><div class="tagline">Investor Data Room · Confidential</div></div>
+  <div class="sidebar-section">Overview</div>
+  <a href="index.html" class="sidebar-item"><span class="icon">🏠</span> Data Room Home</a>
+  <div class="sidebar-section">Company</div>
+  <a href="why-now.html" class="sidebar-item"><span class="icon">⚡</span> Why Now</a>
+  <a href="team.html" class="sidebar-item"><span class="icon">👥</span> Team Profiles</a>
+  <a href="legal.html" class="sidebar-item"><span class="icon">📋</span> Legal Docs</a>
+  <div class="sidebar-section">Products</div>
+  <a href="product.html" class="sidebar-item locked"><span class="icon">🔒</span> Product Build <span class="lock-badge">NDA</span></a>
+  <a href="gtm.html" class="sidebar-item"><span class="icon">🚀</span> GTM Strategy</a>
+  <a href="pricing.html" class="sidebar-item"><span class="icon">💰</span> Pricing</a>
+  <div class="sidebar-section">Verticals</div>
+  <a href="nuclear.html" class="sidebar-item"><span class="icon">⚛️</span> Nuclear & Energy</a>
+  <div class="sidebar-section">Financials</div>
+  <a href="financials.html" class="sidebar-item"><span class="icon">📊</span> Financial Statements</a>
+  <div class="sidebar-section">Pitch Decks</div>
+  <a href="decks.html" class="sidebar-item active"><span class="icon">📽️</span> Pitch Decks</a>
+  <div class="sidebar-footer"><div>PulseDNA Inc. · Delaware C-Corp</div><div style="margin-top:4px;color:var(--teal);">pulsednafederatedai.com</div></div>
+</nav>
+<div class="main">
+  <div class="accent-line"></div>
+  <div class="topbar">
+    <div class="topbar-breadcrumb"><a href="index.html">Data Room</a> <span>›</span> <span>Pitch Decks</span></div>
+    <div class="topbar-badge">CONFIDENTIAL</div>
+  </div>
+  <div class="page-content">
+    <a href="index.html" class="back-link">← Back to Data Room</a>
+    <div class="page-hero">
+      <div class="page-eyebrow">📽️ Pitch Decks</div>
+      <h1 class="page-title">Investor <span class="t">Presentations</span></h1>
+      <p class="page-subtitle">Three purpose-built decks — each targeting a specific audience and investment thesis. All share the same visual identity and technical depth.</p>
+    </div>
+
+    <a href="#" class="deck-card">
+      <div class="deck-icon">🔮</div>
+      <div>
+        <div class="deck-title">Magic Lens — Angel Pitch Deck</div>
+        <div class="deck-desc">The original 12-slide angel round deck. Covers the problem, product, market, traction, team, and ask. Designed for angel investors and early-stage funds evaluating the core Magic Lens product thesis.</div>
+        <div class="deck-slides">12 Slides · Angel Round · $10M Seed</div>
+      </div>
+      <div class="deck-arrow">→</div>
+    </a>
+
+    <a href="#" class="deck-card purple">
+      <div class="deck-icon">⚛️</div>
+      <div>
+        <div class="deck-title">Magic Lens — Nuclear &amp; Critical Infrastructure</div>
+        <div class="deck-desc">6-slide enterprise mini deck introducing the Why, the Team, and how PulseDNA helps nuclear. Designed for Hadron Energy, Supermicro, and nuclear operator audiences. Includes real team photos and the Phase 1 → Phase 2 architecture.</div>
+        <div class="deck-slides purple">6 Slides · Nuclear Vertical · Enterprise</div>
+      </div>
+      <div class="deck-arrow purple">→</div>
+    </a>
+
+    <a href="#" class="deck-card">
+      <div class="deck-icon">🏛️</div>
+      <div>
+        <div class="deck-title">AI Trust Infrastructure — Investor Deck</div>
+        <div class="deck-desc">13-slide deck designed for technical investors and AI researchers (e.g. Andrew Ng). Positions PulseDNA as the SSL of AI — the trust infrastructure layer that the entire AI ecosystem needs. Covers the credibility crisis, the provenance engine, the trust graph, traction, and team.</div>
+        <div class="deck-slides">13 Slides · Technical Investors · $10B+ Vision</div>
+      </div>
+      <div class="deck-arrow">→</div>
+    </a>
+
+    <div class="card" style="margin-top:8px;">
+      <div class="card-title">📝 Presenter Script — AI Trust Infrastructure</div>
+      <div class="card-body">A full ~4-minute presenter script for the AI Trust Infrastructure deck, designed to guide Andrew Ng from "AI has a credibility crisis" → "PulseDNA is the SSL of AI" → "this is a $10M infrastructure build" without ever saying the number. Includes proactive answers to his likely technical questions and a complete Q&amp;A appendix.</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

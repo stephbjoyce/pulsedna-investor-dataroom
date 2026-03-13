@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Financial Statements — PulseDNA Data Room</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  .invoice-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    transition: border-color 0.2s;
+  }
+  .invoice-card:hover { border-color: rgba(0,210,180,0.25); }
+  .invoice-num { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 0.1em; margin-bottom: 4px; }
+  .invoice-client { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+  .invoice-desc { font-size: 13px; color: var(--muted); }
+  .invoice-amount { font-size: 24px; font-weight: 900; color: var(--teal); text-align: right; }
+  .invoice-date { font-size: 11px; color: var(--muted); text-align: right; margin-top: 4px; }
+  .invoice-status {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(74,222,128,0.1);
+    border: 1px solid rgba(74,222,128,0.3);
+    color: var(--green);
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><div class="brand">PulseDNA</div><div class="tagline">Investor Data Room · Confidential</div></div>
+  <div class="sidebar-section">Overview</div>
+  <a href="index.html" class="sidebar-item"><span class="icon">🏠</span> Data Room Home</a>
+  <div class="sidebar-section">Company</div>
+  <a href="why-now.html" class="sidebar-item"><span class="icon">⚡</span> Why Now</a>
+  <a href="team.html" class="sidebar-item"><span class="icon">👥</span> Team Profiles</a>
+  <a href="legal.html" class="sidebar-item"><span class="icon">📋</span> Legal Docs</a>
+  <div class="sidebar-section">Products</div>
+  <a href="product.html" class="sidebar-item locked"><span class="icon">🔒</span> Product Build <span class="lock-badge">NDA</span></a>
+  <a href="gtm.html" class="sidebar-item"><span class="icon">🚀</span> GTM Strategy</a>
+  <a href="pricing.html" class="sidebar-item"><span class="icon">💰</span> Pricing</a>
+  <div class="sidebar-section">Verticals</div>
+  <a href="nuclear.html" class="sidebar-item"><span class="icon">⚛️</span> Nuclear & Energy</a>
+  <div class="sidebar-section">Financials</div>
+  <a href="financials.html" class="sidebar-item active"><span class="icon">📊</span> Financial Statements</a>
+  <div class="sidebar-section">Pitch Decks</div>
+  <a href="decks.html" class="sidebar-item"><span class="icon">📽️</span> Pitch Decks</a>
+  <div class="sidebar-footer"><div>PulseDNA Inc. · Delaware C-Corp</div><div style="margin-top:4px;color:var(--teal);">pulsednafederatedai.com</div></div>
+</nav>
+<div class="main">
+  <div class="accent-line"></div>
+  <div class="topbar">
+    <div class="topbar-breadcrumb"><a href="index.html">Data Room</a> <span>›</span> <span>Financial Statements</span></div>
+    <div class="topbar-badge">CONFIDENTIAL</div>
+  </div>
+  <div class="page-content">
+    <a href="index.html" class="back-link">← Back to Data Room</a>
+    <div class="page-hero">
+      <div class="page-eyebrow">📊 Financial Statements</div>
+      <h1 class="page-title">Revenue <span class="t">Traction</span> &amp; <span class="p">Invoices</span></h1>
+      <p class="page-subtitle">Early revenue from SAIC/USPTO engagements demonstrates real customer validation and procurement-grade credibility. All invoices issued by The PulseDNA Inc.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:32px;">
+      <div class="card-title">🏢 Primary Client — SAIC / USPTO (via Catalyst Cubes Inc.)</div>
+      <div class="card-body">
+        <table class="data-table" style="margin-top:0;">
+          <tbody>
+            <tr><td style="color:var(--muted);width:180px;">Client</td><td style="font-weight:600;">Catalyst Cubes Inc. (SAIC/USPTO)</td></tr>
+            <tr><td style="color:var(--muted);">Billing Address</td><td style="font-weight:600;">46090 Lake Center Plz, Suite 301, Sterling, VA 20165</td></tr>
+            <tr><td style="color:var(--muted);">Service</td><td style="font-weight:600;">ETIS (Enterprise Technical Intelligence Services)</td></tr>
+            <tr><td style="color:var(--muted);">Engagement Period</td><td style="font-weight:600;">October 2025 – March 2026</td></tr>
+            <tr><td style="color:var(--muted);">Payment Terms</td><td style="font-weight:600;">Net 30</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;margin-bottom:16px;">Invoice History</div>
+
+    <div class="invoice-card">
+      <div>
+        <div class="invoice-num">INVOICE #1001</div>
+        <div class="invoice-client">SAIC / USPTO — Catalyst Cubes Inc.</div>
+        <div class="invoice-desc">ETIS Services — October 2025</div>
+        <div class="invoice-status">ISSUED</div>
+      </div>
+      <div>
+        <div class="invoice-amount">—</div>
+        <div class="invoice-date">Invoice Date: Oct 2025 · Net 30</div>
+      </div>
+    </div>
+
+    <div class="invoice-card">
+      <div>
+        <div class="invoice-num">INVOICE #1003</div>
+        <div class="invoice-client">SAIC / USPTO — Catalyst Cubes Inc.</div>
+        <div class="invoice-desc">ETIS Services — December 2025</div>
+        <div class="invoice-status">ISSUED</div>
+      </div>
+      <div>
+        <div class="invoice-amount">—</div>
+        <div class="invoice-date">Invoice Date: Dec 2025 · Net 30</div>
+      </div>
+    </div>
+
+    <div class="invoice-card">
+      <div>
+        <div class="invoice-num">INVOICE #1004</div>
+        <div class="invoice-client">SAIC / USPTO — Catalyst Cubes Inc.</div>
+        <div class="invoice-desc">ETIS Services — January 2026</div>
+        <div class="invoice-status">ISSUED</div>
+      </div>
+      <div>
+        <div class="invoice-amount">—</div>
+        <div class="invoice-date">Invoice Date: 01/26/2026 · Due: 01/31/2026</div>
+      </div>
+    </div>
+
+    <div class="invoice-card">
+      <div>
+        <div class="invoice-num">INVOICE #1005</div>
+        <div class="invoice-client">SAIC / USPTO — Catalyst Cubes Inc.</div>
+        <div class="invoice-desc">ETIS Services — February 2026</div>
+        <div class="invoice-status">ISSUED</div>
+      </div>
+      <div>
+        <div class="invoice-amount">—</div>
+        <div class="invoice-date">Invoice Date: 02/02/2026 · Due: 03/04/2026</div>
+      </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:32px;">
+      Government engagements generate third-party credibility, compliance artifacts, and procurement-grade references that materially de-risk enterprise adoption in law, finance, and healthcare. Government work is product-aligned and fixed-scope — not a services-led growth model.
+      <div class="quote-attr">— PulseDNA GTM Strategy 2.0</div>
+    </div>
+
+    <div class="card" style="margin-top:24px;">
+      <div class="card-title">📈 Path to $10M ARR</div>
+      <div class="card-body">
+        <table class="data-table" style="margin-top:0;">
+          <thead><tr><th>Metric</th><th>Target</th></tr></thead>
+          <tbody>
+            <tr><td>Enterprise Accounts</td><td style="color:var(--teal);font-weight:700;">10–15 high-trust regulated accounts</td></tr>
+            <tr><td>Average ARR per Account</td><td style="color:var(--teal);font-weight:700;">~$750,000</td></tr>
+            <tr><td>Revenue Model</td><td style="color:var(--muted);">Platform license + GPU-hour usage + expert verification</td></tr>
+            <tr><td>PulseFINE™ Upside</td><td style="color:var(--purple);font-weight:700;">$5M–$15M per sovereign infrastructure engagement</td></tr>
+            <tr><td>Series A Trigger</td><td style="color:var(--gold);">FedRAMP Ready + 3 signed enterprise contracts</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

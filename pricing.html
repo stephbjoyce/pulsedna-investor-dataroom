@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing — PulseDNA Data Room</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  .pricing-tier {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pricing-tier::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--teal);
+  }
+  .pricing-tier.purple::before { background: var(--purple); }
+  .pricing-tier.gold::before { background: var(--gold); }
+  .pricing-tier.green::before { background: var(--green); }
+
+  .tier-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .tier-name { font-size: 18px; font-weight: 800; }
+  .tier-price { font-size: 22px; font-weight: 900; color: var(--teal); }
+  .tier-price.purple { color: var(--purple); }
+  .tier-price.gold { color: var(--gold); }
+  .tier-price.green { color: var(--green); }
+  .tier-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+  .tier-features { list-style: none; }
+  .tier-features li { font-size: 13px; color: #b0c4d8; padding: 5px 0; display: flex; align-items: flex-start; gap: 8px; }
+  .tier-features li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+  .tier-features.purple li::before { color: var(--purple); }
+  .tier-features.gold li::before { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<nav class="sidebar">
+  <div class="sidebar-logo"><div class="brand">PulseDNA</div><div class="tagline">Investor Data Room · Confidential</div></div>
+  <div class="sidebar-section">Overview</div>
+  <a href="index.html" class="sidebar-item"><span class="icon">🏠</span> Data Room Home</a>
+  <div class="sidebar-section">Company</div>
+  <a href="why-now.html" class="sidebar-item"><span class="icon">⚡</span> Why Now</a>
+  <a href="team.html" class="sidebar-item"><span class="icon">👥</span> Team Profiles</a>
+  <a href="legal.html" class="sidebar-item"><span class="icon">📋</span> Legal Docs</a>
+  <div class="sidebar-section">Products</div>
+  <a href="product.html" class="sidebar-item locked"><span class="icon">🔒</span> Product Build <span class="lock-badge">NDA</span></a>
+  <a href="gtm.html" class="sidebar-item"><span class="icon">🚀</span> GTM Strategy</a>
+  <a href="pricing.html" class="sidebar-item active"><span class="icon">💰</span> Pricing</a>
+  <div class="sidebar-section">Verticals</div>
+  <a href="nuclear.html" class="sidebar-item"><span class="icon">⚛️</span> Nuclear & Energy</a>
+  <div class="sidebar-section">Financials</div>
+  <a href="financials.html" class="sidebar-item"><span class="icon">📊</span> Financial Statements</a>
+  <div class="sidebar-section">Pitch Decks</div>
+  <a href="decks.html" class="sidebar-item"><span class="icon">📽️</span> Pitch Decks</a>
+  <div class="sidebar-footer"><div>PulseDNA Inc. · Delaware C-Corp</div><div style="margin-top:4px;color:var(--teal);">pulsednafederatedai.com</div></div>
+</nav>
+<div class="main">
+  <div class="accent-line"></div>
+  <div class="topbar">
+    <div class="topbar-breadcrumb"><a href="index.html">Data Room</a> <span>›</span> <span>Pricing</span></div>
+    <div class="topbar-badge">CONFIDENTIAL</div>
+  </div>
+  <div class="page-content">
+    <a href="index.html" class="back-link">← Back to Data Room</a>
+    <div class="page-hero">
+      <div class="page-eyebrow">💰 Pricing Strategy</div>
+      <h1 class="page-title">Sovereign &amp; <span class="t">Verified</span> Intelligence</h1>
+      <p class="page-subtitle">A land-and-expand model built for regulated enterprises. Start with a low-friction pilot. Expand to full sovereign infrastructure. Every tier creates switching costs and deepens the moat.</p>
+    </div>
+
+    <div class="pricing-tier">
+      <div class="tier-header">
+        <div>
+          <div class="tier-name">Tier 1 — Magic Lens Pilot</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px;">Entry · Sandbox or Limited Evaluation · Days to Weeks</div>
+        </div>
+        <div class="tier-price">$50K – $100K<span style="font-size:14px;font-weight:400;color:var(--muted);">/yr</span></div>
+      </div>
+      <div class="tier-desc">Rapid value without infrastructure commitment. Designed for compliance officers, regulatory affairs leads, and engineering teams evaluating AI for the first time. No operational risk. No data leaves the boundary.</div>
+      <ul class="tier-features">
+        <li>Magic Lens semantic search across regulatory document corpus</li>
+        <li>NRC ADAMS ingestion and citation retrieval</li>
+        <li>History &amp; Evidence lens (RAG with confidence scores)</li>
+        <li>Basic audit trail and provenance logging</li>
+        <li>Sandbox environment — no production system integration required</li>
+        <li>Onboarding in days, full value in weeks</li>
+      </ul>
+    </div>
+
+    <div class="pricing-tier purple">
+      <div class="tier-header">
+        <div>
+          <div class="tier-name">Tier 2 — Regulated Enterprise</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px;">Mid-Market · Full Platform · 10 CFR 50 Compliant</div>
+        </div>
+        <div class="tier-price purple">$250K – $500K<span style="font-size:14px;font-weight:400;color:var(--muted);">/yr</span></div>
+      </div>
+      <div class="tier-desc">Full Magic Lens platform with all four intelligence lenses, Knowledge Graph, and compliance module. For organizations with active NRC licensing, PTAB proceedings, or FDA regulatory submissions.</div>
+      <ul class="tier-features purple">
+        <li>All 4 lenses: History &amp; Evidence, Discourse &amp; Expert, Knowledge Graph, Anomaly Detection</li>
+        <li>Neo4j Knowledge Graph with regulatory relationship mapping</li>
+        <li>10 CFR 50 Appendix B audit trail — Criterion XVI compliant</li>
+        <li>John Snow Labs integration for unstructured clinical/handwritten data (NLP)</li>
+        <li>FedRAMP-aligned security posture</li>
+        <li>Expert verification services (human-in-the-loop)</li>
+        <li>Optional Supermicro node for on-premise deployment</li>
+      </ul>
+    </div>
+
+    <div class="pricing-tier gold">
+      <div class="tier-header">
+        <div>
+          <div class="tier-name">Tier 3 — Sovereign Infrastructure (PulseFINE™)</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px;">Enterprise · Air-Gapped · Full Operational Sovereignty</div>
+        </div>
+        <div class="tier-price gold">$1M+<span style="font-size:14px;font-weight:400;color:var(--muted);">/yr</span></div>
+      </div>
+      <div class="tier-desc">Full PulseFINE™ sovereign AI infrastructure. Air-gapped deployment. Predictive workflows, dual simulation, and anomaly detection at production scale. For nuclear operators, national labs, and classified government programs.</div>
+      <ul class="tier-features gold">
+        <li>Full air-gapped PulseFINE™ deployment on Supermicro hardware</li>
+        <li>NVIDIA FLARE federated learning across multiple nodes</li>
+        <li>Real-time sensor anomaly detection (Kafka streaming pipeline)</li>
+        <li>Dual simulation and predictive workflow capabilities</li>
+        <li>FedRAMP Ready certification</li>
+        <li>Multi-year lifecycle contract with expansion pricing</li>
+        <li>Dedicated nuclear specialist team (sentiment + physics)</li>
+      </ul>
+    </div>
+
+    <div class="pricing-tier green">
+      <div class="tier-header">
+        <div>
+          <div class="tier-name">PulseFINE™ Full Infrastructure Build</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:4px;">One-Time Build · Months for Pilot → Multi-Year Production</div>
+        </div>
+        <div class="tier-price green">$5M – $15M<span style="font-size:14px;font-weight:400;color:var(--muted);">/engagement</span></div>
+      </div>
+      <div class="tier-desc">Complete sovereign AI infrastructure build. 5 colocation centers, innovation pods per regulated vertical, full compliance and regulatory standards implementation. Each engagement is a step-function revenue event.</div>
+      <ul class="tier-features">
+        <li>5 colocation centers with dedicated hardware</li>
+        <li>Innovation pods per highly regulated vertical</li>
+        <li>Full compliance and deeper regulatory standards implementation</li>
+        <li>Key partnerships and co-sell motion activation</li>
+        <li>Dedicated CV, DevOps/SRE, and offshore engineering teams</li>
+        <li>Nuclear specialists: one in sentiment analysis, one in physics</li>
+      </ul>
+    </div>
+
+    <hr class="divider" />
+
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;margin-bottom:16px;">Vertical Pricing Anchors</div>
+
+    <table class="data-table">
+      <thead><tr><th>Vertical</th><th>Entry (Tier 1)</th><th>Platform (Tier 2)</th><th>Sovereign (Tier 3+)</th></tr></thead>
+      <tbody>
+        <tr><td>⚛️ Nuclear / Energy</td><td style="color:var(--teal);">$50K–$200K/yr</td><td style="color:var(--purple);">$500K–$1M/yr</td><td style="color:var(--gold);">$5M–$15M build</td></tr>
+        <tr><td>🏥 Clinical / MedTech</td><td style="color:var(--teal);">$50K–$100K/yr</td><td style="color:var(--purple);">$250K–$750K/yr</td><td style="color:var(--gold);">$1M–$5M build</td></tr>
+        <tr><td>🏦 FinTech / Financial Services</td><td style="color:var(--teal);">$50K–$100K/yr</td><td style="color:var(--purple);">$250K–$500K/yr</td><td style="color:var(--gold);">$1M–$3M build</td></tr>
+        <tr><td>🏛️ Government / Defense</td><td style="color:var(--teal);">$100K–$200K/yr</td><td style="color:var(--purple);">$500K–$1M/yr</td><td style="color:var(--gold);">$5M–$15M build</td></tr>
+        <tr><td>💻 Consumer SaaS (API)</td><td style="color:var(--teal);">$10K–$50K/yr</td><td style="color:var(--purple);">$50K–$250K/yr</td><td style="color:var(--muted);">N/A</td></tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+</body>
+</html>
